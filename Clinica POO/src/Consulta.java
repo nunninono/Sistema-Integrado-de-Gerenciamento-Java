@@ -32,6 +32,14 @@ public class Consulta {
         return prioridade;
     }
 
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
     // Sets
 
     public void setData (String data) {
@@ -49,5 +57,13 @@ public class Consulta {
 
     public void setPrioridade (boolean prioridade) {
         this.prioridade = prioridade;
+    }
+
+    public void setMedico (Medico medico) {
+        this.medico = medico;
+    }
+
+    public void setPaciente (Paciente paciente) {
+        this.paciente = paciente;
     }
 }
