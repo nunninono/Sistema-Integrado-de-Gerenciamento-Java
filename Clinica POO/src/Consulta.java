@@ -2,15 +2,18 @@ public class Consulta {
     // Atributos da classe
     private String data;
     private String horario;
-    private String motivo;
     private boolean prioridade;
+    private Medico medico;
+    private Paciente paciente;
 
-    public Consulta (String data, String horario, String motivo, boolean prioridade){
+
+    public Consulta (String data, String horario, boolean prioridade, Medico medico, Paciente paciente){
         // Construtor da classe
         this.data = data;
         this.horario = horario;
-        this.motivo = motivo;
         this.prioridade = false;
+        this.medico = medico;
+        this.paciente = paciente;
     }
         
     // Cria os gets e sets para acessar os atributos (get para ler, set para editar)
@@ -25,10 +28,6 @@ public class Consulta {
         return horario;
     }
 
-    public String getMotivo() {
-        return motivo;
-    }
-
     public boolean getPrioridade() {
         return prioridade;
     }
@@ -41,10 +40,6 @@ public class Consulta {
 
     public void setHorario (String horario) {
         this.horario = horario;
-    }
-
-    public void setMotivo (String motivo) {
-        this.motivo = motivo;
     }
 
     // bolean é diferente
