@@ -2,14 +2,14 @@ public class Medico {
     // Atributos da classe
     private String nomeMedico;
     private boolean disponibilidade;
-    private String especialidade;
+    private String especializacao;
     private int crm;
     
-    public Medico (String nomeMedico, boolean disponibilidade, String especialidade, int crm) {
+    public Medico (String nomeMedico, boolean disponibilidade, String especializacao, int crm) {
         // Construtor da classe
         this.nomeMedico = nomeMedico;
         this.disponibilidade = true;
-        this.especialidade = especialidade;
+        this.especializacao = especializacao;
         this.crm = crm;
 
     }
@@ -26,8 +26,8 @@ public class Medico {
         return disponibilidade;
     }
 
-    public String getEspecialidade() {
-        return especialidade;
+    public String getEspecializacao() {
+        return especializacao;
     }
 
     public int getCrm() {
@@ -48,12 +48,22 @@ public class Medico {
         this.disponibilidade = disponibilidade;
     }
 
-    public void setEspecialidade (String especialidade) {
-        this.especialidade = especialidade;
+    public void setEspecializacao (String especializacao) {
+        this.especializacao = especializacao;
     }
 
     public void setCrm (int crm) {
         this.crm = crm;
     }
 
+    // Procediemntos
+
+    public void estaDisponivel (boolean disponibilidade) {
+        if (disponibilidade == true) {
+            System.out.println("Esta disponivel!");
+        }
+        else {
+            System.out.println("Esta ocupado!");
+        }
+    }
 }
