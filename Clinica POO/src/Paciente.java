@@ -1,78 +1,88 @@
 public class Paciente {
-   private String nomePaciente;
-   private int idade;
-   private String sintoma;
-   private boolean planoSaude;
-   private String numeroContato;
-   private String tipoSanguineo;
+    // Atributos da classe
+    private String nomePaciente;
+    private int idade;
+    private String sintoma;
+    private boolean planoSaude;
+    private String numeroContato;
+    private String tipoSanguineo;
+    
+    public Paciente (String nomePaciente, int idade, String sintoma, boolean planoSaude, String numeroContato, String tipoSanguineo){
+        // Construtor da classe
+        this.nomePaciente = nomePaciente;
+        this.idade = idade;
+        this.sintoma = sintoma;
+        this.planoSaude = false;
+        this.numeroContato = numeroContato;
+        this.tipoSanguineo = tipoSanguineo;
+    }
+    
+    // Cria os gets e sets pra acessar os atributos (get para ler  set para editar)
+        
+    // Gets
+    
+    public String getNomePaciente() {
+        return nomePaciente;
+    }
+    
+    public int getIdade() {
+        return idade;
+    }
+    
+    public String getSintoma() {
+        return sintoma;
+    }
+    
+    public boolean getPlanoSaude() {
+        return planoSaude;
+    }
+    
+    public String getNumeroContato() {
+        return numeroContato;
+    }
+    
+    public String getTipoSanguineo() {
+        return tipoSanguineo;
+    }
+    
+    // Sets
+    
+    public void setNomePaciente (String nomePaciente) {
+        this.nomePaciente = nomePaciente;
+    }
+    
+    public void setIdade (int idade) {
+        this.idade = idade;
+    }
+    
+    public void setSintoma (String sintoma) {
+        this.sintoma = sintoma;
+    }
+    
+    public boolean isPlanoSaude (){
+        return planoSaude;
+    }
+    
+    public void setPlanoSaude (boolean planoSaude) {
+        this.planoSaude = planoSaude;
+    }
+    
+    public void setNumeroContato (String numeroContato) {
+        this.numeroContato = numeroContato;
+    }
+    
+    public void setTipoSanguineo (String tipoSanguineo) {
+        this.tipoSanguineo = tipoSanguineo;
+    }
 
-   public Paciente(String var1, int var2, String var3, boolean var4, String var5, String var6) {
-      this.nomePaciente = var1;
-      this.idade = var2;
-      this.sintoma = var3;
-      this.planoSaude = false;
-      this.numeroContato = var5;
-      this.tipoSanguineo = var6;
-   }
-
-   public String getNomePaciente() {
-      return this.nomePaciente;
-   }
-
-   public int getIdade() {
-      return this.idade;
-   }
-
-   public String getSintoma() {
-      return this.sintoma;
-   }
-
-   public boolean getPlanoSaude() {
-      return this.planoSaude;
-   }
-
-   public String getNumeroContato() {
-      return this.numeroContato;
-   }
-
-   public String getTipoSanguineo() {
-      return this.tipoSanguineo;
-   }
-
-   public void setNomePaciente(String var1) {
-      this.nomePaciente = var1;
-   }
-
-   public void setIdade(int var1) {
-      this.idade = var1;
-   }
-
-   public void setSintoma(String var1) {
-      this.sintoma = var1;
-   }
-
-   public boolean isPlanoSaude() {
-      return this.planoSaude;
-   }
-
-   public void setPlanoSaude(boolean var1) {
-      this.planoSaude = var1;
-   }
-
-   public void setNumeroContato(String var1) {
-      this.numeroContato = var1;
-   }
-
-   public void setTipoSanguineo(String var1) {
-      this.tipoSanguineo = var1;
-   }
-
-   public void temPlanoSaude(boolean var1) {
-      if (var1) {
-         System.out.println("Possui plano de saude!");
-      } else {
-         System.out.println("Nao possui plano de saude!");
-      }
-
-   }
+    // Procedimentos
+    
+    public void temPlanoSaude(boolean planoSaude) {
+        if (planoSaude == true) {
+            System.out.println("    Plano de saude: Possui");
+        }
+        else {
+            System.out.println("    Plano de saude: Nao possui");
+        }
+    }
 }
