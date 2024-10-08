@@ -8,7 +8,7 @@ public class Medico {
     public Medico (String nomeMedico, boolean disponibilidade, String especializacao, int crm) {
         // Construtor da classe
         this.nomeMedico = nomeMedico;
-        this.disponibilidade = true;
+        this.disponibilidade = disponibilidade;
         this.especializacao = especializacao;
         this.crm = crm;
 
