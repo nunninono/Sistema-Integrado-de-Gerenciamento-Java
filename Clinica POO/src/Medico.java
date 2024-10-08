@@ -63,7 +63,8 @@ public class Medico {
             System.out.println("Esta disponivel!");
         }
         else {
-            System.out.println("Esta ocupado!");
+            System.out.println("Nao esta disponivel!");
         }
     }
+
 }
