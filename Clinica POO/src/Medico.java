@@ -60,10 +60,10 @@ public class Medico {
 
     public void estaDisponivel (boolean disponibilidade) {
         if (disponibilidade == true) {
-            System.out.println("Esta disponivel!");
+            System.out.println("    Disponibilidade: Disponivel");
         }
         else {
-            System.out.println("Nao esta disponivel!");
+            System.out.println("    Disponibilidade: Indisponivel");
         }
     }
 
