@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+// import java.util.Scanner;
 
 public class Clinica {
     
@@ -38,8 +39,8 @@ public class Clinica {
         System.out.println("Prioridade: " + consulta.isPrioridade());
         System.out.println("Data: " + consulta.getData());
         System.out.println("Horario: " + consulta.getHorario());
-        System.out.println("Medico responsavel: " + consulta.getMedico());
-        System.out.println("Paciente: " + consulta.getPaciente());
+        System.out.println("Medico responsavel: " + consulta.getMedico().getNomeMedico());
+        System.out.println("Paciente: " + consulta.getPaciente().getNomePaciente());
     }
 
     // Exibe os dados do médico
@@ -86,5 +87,45 @@ public class Clinica {
         System.out.println("\n");
         clinica.exibirDadosMedico(medico);
         System.out.println("\n");
+
+        // Cria o Scanner pra inputar dados 
+        /*Scanner scanner = new Scanner(System.in);
+
+        boolean continuar = true;
+
+        while (continuar) {
+            System.out.println("======== MENU DE OPÇÕES ========");
+            System.out.println("1. .");
+            System.out.println("2. .");
+            System.out.println("3. .");
+            System.out.println("4. Sair do prorama.");
+            System.out.print("Escolha uma opção: ");
+            int opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    
+                    break;
+
+                case 2:
+                    
+                    break;
+
+                case 3:
+                    
+                    break;
+
+                case 4:
+                    System.out.println("Saindo do sistema...\n");
+                    continuar = false;
+                    break;
+
+                default:
+                    System.out.println("Opção inválida. Tente novamente.\n");
+                    break;
+            }
+        }
+        // Encerra o leitor
+        scanner.close();*/
     }
 }
