@@ -61,7 +61,7 @@ public class Clinica {
         Paciente novoPaciente = new Paciente(nome, idade, sintoma, planoSaude, numeroContato, tipoSanguineo);
         adicionarPaciente(novoPaciente);
 
-        System.out.println("\nPaciente adicionado com sucesso!");
+        System.out.println("\nPaciente adicionado com sucesso!\n");
     }
 
     // Criar um novo médico
@@ -86,7 +86,7 @@ public class Clinica {
         Medico novoMedico = new Medico(nome, disponibilidade, especializacao, crm);
         adicionarMedico(novoMedico);
 
-        System.out.println("\nMédico adicionado com sucesso!");
+        System.out.println("\nMédico adicionado com sucesso!\n");
     }
 
     // Criar uma nova consulta
@@ -138,16 +138,16 @@ public class Clinica {
         Consulta novaConsulta = new Consulta(data, horario, prioridade, medico, paciente);
         adicionarConsulta(novaConsulta);
 
-        System.out.println("\nConsulta adicionada com sucesso!");
+        System.out.println("\nConsulta adicionada com sucesso!\n");
     }
 
     // Exibe os dados da consulta
     public void exibirDadosConsulta(Consulta consulta) {
         System.out.println("\nDados da Consulta (" + consulta.getHorario() + "):");
-        System.out.println("Data: " + consulta.getData());
-        System.out.println("Horario: " + consulta.getHorario());
-        System.out.println("Medico responsavel: " + consulta.getMedico().getNomeMedico());
-        System.out.println("Paciente: " + consulta.getPaciente().getNomePaciente());
+        System.out.println("    Data: " + consulta.getData());
+        System.out.println("    Horario: " + consulta.getHorario());
+        System.out.println("    Medico responsavel: " + consulta.getMedico().getNomeMedico());
+        System.out.println("    Paciente: " + consulta.getPaciente().getNomePaciente());
         // Usar o método da própria classe para verificar prioridade
         consulta.possivelPrioridade(consulta.isPrioridade());
     }
@@ -155,9 +155,9 @@ public class Clinica {
     // Exibe os dados do médico
     public void exibirDadosMedico(Medico medico) {
         System.out.println("\nDados do Médico " + medico.getNomeMedico() + ":");
-        System.out.println("Nome: " + medico.getNomeMedico());
-        System.out.println("CRM: " + medico.getCrm());
-        System.out.println("Especialização: " + medico.getEspecializacao());
+        System.out.println("    Nome: " + medico.getNomeMedico());
+        System.out.println("    CRM: " + medico.getCrm());
+        System.out.println("    Especialização: " + medico.getEspecializacao());
         // Usar o método da própria classe para verificar disponibilidade
         medico.estaDisponivel(medico.getDisponibilidade());
     }
@@ -165,11 +165,11 @@ public class Clinica {
     // Exibe os dados do paciente
     public void exibirDadosPaciente(Paciente paciente) {
         System.out.println("\nDados do Paciente " + paciente.getNomePaciente() + ":");
-        System.out.println("Nome: " + paciente.getNomePaciente());
-        System.out.println("Idade: " + paciente.getIdade());
-        System.out.println("Sintoma: " + paciente.getSintoma());
-        System.out.println("Numero de contato: " + paciente.getNumeroContato());
-        System.out.println("Tipo Sanguíneo: " + paciente.getTipoSanguineo());
+        System.out.println("    Nome: " + paciente.getNomePaciente());
+        System.out.println("    Idade: " + paciente.getIdade());
+        System.out.println("    Sintoma: " + paciente.getSintoma());
+        System.out.println("    Numero de contato: " + paciente.getNumeroContato());
+        System.out.println("    Tipo Sanguíneo: " + paciente.getTipoSanguineo());
         // Usar o método da própria classe para verificar plano de saúde
         paciente.temPlanoSaude(paciente.isPlanoSaude());
     }
@@ -191,11 +191,11 @@ public class Clinica {
         clinica.adicionarConsulta(consulta);
 
         // Exibe os dados da consulta, do paciente e do médico
-        System.out.println("\n--- Dados Iniciais ---");
+        System.out.println("\n------------ Dados Iniciais ------------");
         clinica.exibirDadosConsulta(consulta);
         clinica.exibirDadosPaciente(paciente);
         clinica.exibirDadosMedico(medico);
-        System.out.println("\n---------------------\n");
+        System.out.println("\n----------------------------------------\n");
 
         // Cria o Scanner pra inputar dados 
         Scanner scanner = new Scanner(System.in);
