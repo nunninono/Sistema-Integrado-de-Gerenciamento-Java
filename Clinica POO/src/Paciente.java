@@ -12,7 +12,7 @@ public class Paciente {
         this.nomePaciente = nomePaciente;
         this.idade = idade;
         this.sintoma = sintoma;
-        this.planoSaude = false;
+        this.planoSaude = planoSaude;
         this.numeroContato = numeroContato;
         this.tipoSanguineo = tipoSanguineo;
     }
