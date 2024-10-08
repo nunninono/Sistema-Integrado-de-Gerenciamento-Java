@@ -40,12 +40,24 @@ public class Clinica {
         System.out.println("Realizada: " + consulta.isRealizada());
     }
 
+    // Exibe os dados do médico
     public void exibirDadosMedico(Medico medico) {
         System.out.println("Dados do Médico:");
         System.out.println("Nome: " + medico.getNomeMedico());
         System.out.println("CRM: " + medico.getCrm());
         System.out.println("Especialização: " + medico.getEspecializacao());
         System.out.println("Disponível: " + medico.getDisponibilidade());
+    }
+
+    // Exibe os dados do paciente
+    public void exibirDadosPaciente(Paciente paciente) {
+        System.out.println("\nDados do Paciente:");
+        System.out.println("Nome: " + paciente.getNomePaciente());
+        System.out.println("Idade: " + paciente.getIdade());
+        System.out.println("Sintoma: " + paciente.getSintoma());
+        System.out.println("Convênio: " + paciente.isConvenio());
+        System.out.println("Telefone: " + paciente.getTelefone());
+        System.out.println("Tipo Sanguíneo: " + paciente.getTipoSanguineo());
     }
 
     public static void main (String[] args) {
