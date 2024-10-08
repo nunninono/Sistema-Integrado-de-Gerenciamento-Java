@@ -35,10 +35,11 @@ public class Clinica {
     // Exibe os dados da consulta
     public void exibirDadosConsulta(Consulta consulta) {
         System.out.println("Dados da Consulta:");
+        System.out.println("Prioridade: " + consulta.isPrioridade());
         System.out.println("Data: " + consulta.getData());
         System.out.println("Horario: " + consulta.getHorario());
-        System.out.println("Prioridade: " + consulta.isPrioridade());
-
+        System.out.println("Medico responsavel: " + consulta.getMedico());
+        System.out.println("Paciente: " + consulta.getPaciente());
     }
 
     // Exibe os dados do médico
@@ -52,7 +53,7 @@ public class Clinica {
 
     // Exibe os dados do paciente
     public void exibirDadosPaciente(Paciente paciente) {
-        System.out.println("\nDados do Paciente:");
+        System.out.println("Dados do Paciente:");
         System.out.println("Nome: " + paciente.getNomePaciente());
         System.out.println("Idade: " + paciente.getIdade());
         System.out.println("Sintoma: " + paciente.getSintoma());
@@ -78,8 +79,12 @@ public class Clinica {
         clinica.adicionarConsulta(consulta);
 
         // Exibe os dados da consulta, do paciente e do médico
+        System.out.println("\n");
         clinica.exibirDadosConsulta(consulta);
+        System.out.println("\n");
         clinica.exibirDadosPaciente(paciente);
+        System.out.println("\n");
         clinica.exibirDadosMedico(medico);
+        System.out.println("\n");
     }
 }
