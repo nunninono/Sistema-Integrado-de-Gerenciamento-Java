@@ -71,10 +71,10 @@ public class Consulta {
 
     public void possivelPrioridade(boolean Prioridade) {
         if (prioridade == true) {
-            System.out.println("E prioritario!!");
+            System.out.println("    Prioridade: E prioridade");
         }
         else {
-            System.out.println("Nao e prioridade!!");
+            System.out.println("    Prioridade: Nao e prioridade");
         }
     }
 }
