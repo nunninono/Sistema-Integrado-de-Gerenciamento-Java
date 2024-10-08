@@ -143,7 +143,7 @@ public class Clinica {
 
     // Exibe os dados da consulta
     public void exibirDadosConsulta(Consulta consulta) {
-        System.out.println("\nDados da Consulta:");
+        System.out.println("\nDados da Consulta (" + consulta.getHorario() + "):");
         System.out.println("Data: " + consulta.getData());
         System.out.println("Horario: " + consulta.getHorario());
         System.out.println("Medico responsavel: " + consulta.getMedico().getNomeMedico());
@@ -154,7 +154,7 @@ public class Clinica {
 
     // Exibe os dados do médico
     public void exibirDadosMedico(Medico medico) {
-        System.out.println("\nDados do Médico:");
+        System.out.println("\nDados do Médico " + medico.getNomeMedico() + ":");
         System.out.println("Nome: " + medico.getNomeMedico());
         System.out.println("CRM: " + medico.getCrm());
         System.out.println("Especialização: " + medico.getEspecializacao());
@@ -164,7 +164,7 @@ public class Clinica {
 
     // Exibe os dados do paciente
     public void exibirDadosPaciente(Paciente paciente) {
-        System.out.println("\nDados do Paciente:");
+        System.out.println("\nDados do Paciente " + paciente.getNomePaciente() + ":");
         System.out.println("Nome: " + paciente.getNomePaciente());
         System.out.println("Idade: " + paciente.getIdade());
         System.out.println("Sintoma: " + paciente.getSintoma());
