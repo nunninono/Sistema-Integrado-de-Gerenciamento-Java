@@ -172,6 +172,7 @@ public class Clinica {
         System.out.println("    Tipo Sanguíneo: " + paciente.getTipoSanguineo());
         // Usar o método da própria classe para verificar plano de saúde
         paciente.temPlanoSaude(paciente.isPlanoSaude());
+        
     }
 
     public static void main (String[] args) {
@@ -180,8 +181,8 @@ public class Clinica {
         Clinica clinica = new Clinica();
 
         // Cria um Paciente, Medico e Consulta
-        Paciente paciente = new Paciente("Nunno", 19, "Tosse", true, "+55(81)99607-6104", "B-");
-        Medico medico = new Medico("João", true, "Cardiologista", 123456);
+        Paciente paciente = new Paciente("Nunno", 19, "Tosse", false, "+55(81)99607-6104", "B-");
+        Medico medico = new Medico("João", false, "Cardiologista", 123456);
         // Inicializar Consulta apenas apos inicializar os objetos Paciente e Medico, pq ambos compõe a Consulta
         Consulta consulta = new Consulta("27/08/2024", "16:00", false, medico, paciente);
 
