@@ -34,8 +34,8 @@ public class Clinica {
     }
 
     // Criar um novo paciente
-    public void criarPaciente() {
-        Scanner scanner = new Scanner(System.in);
+    public void criarPaciente(Scanner scanner) {
+        // Passa scanner por parametro pra evitar erro de "NoSuchElementException"
 
         System.out.println("\nInserir novo Paciente:");
 
@@ -62,12 +62,11 @@ public class Clinica {
         adicionarPaciente(novoPaciente);
 
         System.out.println("\nPaciente adicionado com sucesso!");
-        scanner.close();
     }
 
     // Criar um novo médico
-    public void criarMedico() {
-        Scanner scanner = new Scanner(System.in);
+    public void criarMedico(Scanner scanner) {
+        // Passa scanner por parametro pra evitar erro de "NoSuchElementException"
 
         System.out.println("\nInserir novo Médico:");
 
@@ -88,24 +87,21 @@ public class Clinica {
         adicionarMedico(novoMedico);
 
         System.out.println("\nMédico adicionado com sucesso!");
-        scanner.close();
     }
 
     // Criar uma nova consulta
-    public void criarConsulta() {
-        Scanner scanner = new Scanner(System.in);
+    public void criarConsulta(Scanner scanner) {
+        // Passa scanner por parametro pra evitar erro de "NoSuchElementException"
 
         // Verificar se há médicos cadastrados
         if (medicos.isEmpty()) {
             System.out.println("\nErro: Nenhum médico cadastrado! Por favor, cadastre um médico antes de criar uma consulta.");
-            scanner.close();
             return; // Sai do método sem criar a consulta
         }
 
         // Verificar se há pacientes cadastrados
         if (pacientes.isEmpty()) {
             System.out.println("\nErro: Nenhum paciente cadastrado! Por favor, cadastre um paciente antes de criar uma consulta.");
-            scanner.close();
             return; // Sai do método sem criar a consulta
         }
 
@@ -143,7 +139,6 @@ public class Clinica {
         adicionarConsulta(novaConsulta);
 
         System.out.println("\nConsulta adicionada com sucesso!");
-        scanner.close();
     }
 
     // Exibe os dados da consulta
@@ -196,13 +191,11 @@ public class Clinica {
         clinica.adicionarConsulta(consulta);
 
         // Exibe os dados da consulta, do paciente e do médico
-        System.out.println("\n");
+        System.out.println("\n--- Dados Iniciais ---");
         clinica.exibirDadosConsulta(consulta);
-        System.out.println("\n");
         clinica.exibirDadosPaciente(paciente);
-        System.out.println("\n");
         clinica.exibirDadosMedico(medico);
-        System.out.println("\n");
+        System.out.println("\n---------------------\n");
 
         // Cria o Scanner pra inputar dados 
         Scanner scanner = new Scanner(System.in);
@@ -211,7 +204,7 @@ public class Clinica {
 
         // Loop com a interface
         while (continuar) {
-            System.out.println("\n======== MENU DE OPÇÕES ========");
+            System.out.println("======== MENU DE OPÇÕES ========");
             System.out.println("1. Inserir novo Paciente.");
             System.out.println("2. Inserir novo Medico.");
             System.out.println("3. Inserir uma nova Consulta.");
@@ -222,18 +215,20 @@ public class Clinica {
             System.out.println("================================");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
+            // Limpa o buffer para evitar erros ao ler strings depois de nextInt()
+            scanner.nextLine();
 
             switch (opcao) {
                 case 1:
-                    clinica.criarPaciente();
+                    clinica.criarPaciente(scanner);
                     break;
 
                 case 2:
-                    clinica.criarMedico();
+                    clinica.criarMedico(scanner);
                     break;
 
                 case 3:
-                    clinica.criarConsulta();
+                    clinica.criarConsulta(scanner);
                     break;
                 
                 case 4:
