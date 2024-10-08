@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
-// import java.util.Scanner;
+import java.util.Scanner;
 
 public class Clinica {
     
@@ -33,14 +33,111 @@ public class Clinica {
         pacientes.add(paciente);
     }
 
+    // Criar um novo paciente
+    public void criarPaciente() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Inserir novo Paciente:");
+
+        System.out.print("Nome: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Idade: ");
+        int idade = scanner.nextInt();
+
+        System.out.print("Sintoma: ");
+        String sintoma = scanner.next();
+
+        System.out.print("Possui plano de saúde? (true/false): ");
+        boolean planoSaude = scanner.nextBoolean();
+
+        System.out.print("Número de contato: ");
+        String numeroContato = scanner.next();
+
+        System.out.print("Tipo sanguíneo: ");
+        String tipoSanguineo = scanner.next();
+
+        Paciente novoPaciente = new Paciente(nome, idade, sintoma, planoSaude, numeroContato, tipoSanguineo);
+        adicionarPaciente(novoPaciente);
+
+        System.out.println("Paciente adicionado com sucesso!");
+        scanner.close();
+    }
+
+    // Criar um novo médico
+    public void criarMedico() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Inserir novo Médico:");
+
+        System.out.print("Nome: ");
+        String nome = scanner.nextLine();
+
+        System.out.print("Disponível? (true/false): ");
+        boolean disponibilidade = scanner.nextBoolean();
+
+        System.out.print("Especialização: ");
+        String especializacao = scanner.next();
+
+        System.out.print("CRM: ");
+        int crm = scanner.nextInt();
+
+        Medico novoMedico = new Medico(nome, disponibilidade, especializacao, crm);
+        adicionarMedico(novoMedico);
+
+        System.out.println("Médico adicionado com sucesso!");
+        scanner.close();
+    }
+
+    // Criar uma nova consulta
+    public void criarConsulta() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Inserir nova Consulta:");
+
+        System.out.print("Data (dd/mm/yyyy): ");
+        String data = scanner.next();
+
+        System.out.print("Horário (hh:mm): ");
+        String horario = scanner.next();
+
+        System.out.print("É prioritária? (true/false): ");
+        boolean prioridade = scanner.nextBoolean();
+
+        // Exibe lista de médicos disponíveis
+        System.out.println("Médicos disponíveis:");
+        for (int i = 0; i < medicos.size(); i++) {
+            System.out.println(i + ": " + medicos.get(i).getNomeMedico());
+        }
+        System.out.print("Escolha o médico pelo número: ");
+        int medicoIndex = scanner.nextInt();
+        Medico medico = medicos.get(medicoIndex);
+
+        // Exibe lista de pacientes
+        System.out.println("Pacientes cadastrados:");
+        for (int i = 0; i < pacientes.size(); i++) {
+            System.out.println(i + ": " + pacientes.get(i).getNomePaciente());
+        }
+        System.out.print("Escolha o paciente pelo número: ");
+        int pacienteIndex = scanner.nextInt();
+        Paciente paciente = pacientes.get(pacienteIndex);
+
+        Consulta novaConsulta = new Consulta(data, horario, prioridade, medico, paciente);
+        adicionarConsulta(novaConsulta);
+
+        System.out.println("Consulta adicionada com sucesso!");
+        scanner.close();
+    }
+
     // Exibe os dados da consulta
     public void exibirDadosConsulta(Consulta consulta) {
         System.out.println("Dados da Consulta:");
-        System.out.println("Prioridade: " + consulta.isPrioridade());
         System.out.println("Data: " + consulta.getData());
         System.out.println("Horario: " + consulta.getHorario());
         System.out.println("Medico responsavel: " + consulta.getMedico().getNomeMedico());
         System.out.println("Paciente: " + consulta.getPaciente().getNomePaciente());
+        // Usar o método da própria classe para verificar prioridade
+        consulta.possivelPrioridade(consulta.isPrioridade());
     }
 
     // Exibe os dados do médico
@@ -49,7 +146,8 @@ public class Clinica {
         System.out.println("Nome: " + medico.getNomeMedico());
         System.out.println("CRM: " + medico.getCrm());
         System.out.println("Especialização: " + medico.getEspecializacao());
-        System.out.println("Disponível: " + medico.getDisponibilidade());
+        // Usar o método da própria classe para verificar disponibilidade
+        medico.estaDisponivel(medico.getDisponibilidade());
     }
 
     // Exibe os dados do paciente
@@ -58,9 +156,10 @@ public class Clinica {
         System.out.println("Nome: " + paciente.getNomePaciente());
         System.out.println("Idade: " + paciente.getIdade());
         System.out.println("Sintoma: " + paciente.getSintoma());
-        System.out.println("Plano de saude: " + paciente.isPlanoSaude());
         System.out.println("Numero de contato: " + paciente.getNumeroContato());
         System.out.println("Tipo Sanguíneo: " + paciente.getTipoSanguineo());
+        // Usar o método da própria classe para verificar plano de saúde
+        paciente.temPlanoSaude(paciente.isPlanoSaude());
     }
 
     public static void main (String[] args) {
@@ -93,6 +192,7 @@ public class Clinica {
 
         boolean continuar = true;
 
+        // Loop com a interface
         while (continuar) {
             System.out.println("======== MENU DE OPÇÕES ========");
             System.out.println("1. .");
