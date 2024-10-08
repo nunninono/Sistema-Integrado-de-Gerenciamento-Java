@@ -66,4 +66,15 @@ public class Consulta {
     public void setPaciente (Paciente paciente) {
         this.paciente = paciente;
     }
+
+    // Porcedimentos
+
+    public void possivelPrioridade(boolean Prioridade) {
+        if (prioridade == true) {
+            System.out.println("E prioritario!!");
+        }
+        else {
+            System.out.println("Nao e prioridade!!");
+        }
+    }
 }
