@@ -36,8 +36,9 @@ public class Clinica {
     public void exibirDadosConsulta(Consulta consulta) {
         System.out.println("Dados da Consulta:");
         System.out.println("Data: " + consulta.getData());
-        System.out.println("Hora: " + consulta.getHora());
-        System.out.println("Realizada: " + consulta.isRealizada());
+        System.out.println("Horario: " + consulta.getHorario());
+        System.out.println("Prioridade: " + consulta.isPrioridade());
+
     }
 
     // Exibe os dados do médico
@@ -55,8 +56,8 @@ public class Clinica {
         System.out.println("Nome: " + paciente.getNomePaciente());
         System.out.println("Idade: " + paciente.getIdade());
         System.out.println("Sintoma: " + paciente.getSintoma());
-        System.out.println("Convênio: " + paciente.isConvenio());
-        System.out.println("Telefone: " + paciente.getTelefone());
+        System.out.println("Plano de saude: " + paciente.isPlanoSaude());
+        System.out.println("Numero de contato: " + paciente.getNumeroContato());
         System.out.println("Tipo Sanguíneo: " + paciente.getTipoSanguineo());
     }
 
@@ -76,8 +77,9 @@ public class Clinica {
         clinica.adicionarMedico(medico);
         clinica.adicionarConsulta(consulta);
 
-        System.out.println(consulta.getData());
-        System.out.println(paciente.getNomePaciente());
-        System.out.println(medico.getDisponibilidade());
+        // Exibe os dados da consulta, do paciente e do médico
+        clinica.exibirDadosConsulta(consulta);
+        clinica.exibirDadosPaciente(paciente);
+        clinica.exibirDadosMedico(medico);
     }
 }
