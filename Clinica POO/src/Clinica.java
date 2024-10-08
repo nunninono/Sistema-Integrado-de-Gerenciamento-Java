@@ -37,7 +37,7 @@ public class Clinica {
     public void criarPaciente() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Inserir novo Paciente:");
+        System.out.println("\nInserir novo Paciente:");
 
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -57,10 +57,11 @@ public class Clinica {
         System.out.print("Tipo sanguíneo: ");
         String tipoSanguineo = scanner.next();
 
+        // Instancia o novo Paciente
         Paciente novoPaciente = new Paciente(nome, idade, sintoma, planoSaude, numeroContato, tipoSanguineo);
         adicionarPaciente(novoPaciente);
 
-        System.out.println("Paciente adicionado com sucesso!");
+        System.out.println("\nPaciente adicionado com sucesso!");
         scanner.close();
     }
 
@@ -68,7 +69,7 @@ public class Clinica {
     public void criarMedico() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Inserir novo Médico:");
+        System.out.println("\nInserir novo Médico:");
 
         System.out.print("Nome: ");
         String nome = scanner.nextLine();
@@ -82,10 +83,11 @@ public class Clinica {
         System.out.print("CRM: ");
         int crm = scanner.nextInt();
 
+        // Instancia o novo Medico
         Medico novoMedico = new Medico(nome, disponibilidade, especializacao, crm);
         adicionarMedico(novoMedico);
 
-        System.out.println("Médico adicionado com sucesso!");
+        System.out.println("\nMédico adicionado com sucesso!");
         scanner.close();
     }
 
@@ -93,7 +95,21 @@ public class Clinica {
     public void criarConsulta() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Inserir nova Consulta:");
+        // Verificar se há médicos cadastrados
+        if (medicos.isEmpty()) {
+            System.out.println("\nErro: Nenhum médico cadastrado! Por favor, cadastre um médico antes de criar uma consulta.");
+            scanner.close();
+            return; // Sai do método sem criar a consulta
+        }
+
+        // Verificar se há pacientes cadastrados
+        if (pacientes.isEmpty()) {
+            System.out.println("\nErro: Nenhum paciente cadastrado! Por favor, cadastre um paciente antes de criar uma consulta.");
+            scanner.close();
+            return; // Sai do método sem criar a consulta
+        }
+
+        System.out.println("\nInserir nova Consulta:");
 
         System.out.print("Data (dd/mm/yyyy): ");
         String data = scanner.next();
@@ -122,16 +138,17 @@ public class Clinica {
         int pacienteIndex = scanner.nextInt();
         Paciente paciente = pacientes.get(pacienteIndex);
 
+        // Instancia uma nova Consulta
         Consulta novaConsulta = new Consulta(data, horario, prioridade, medico, paciente);
         adicionarConsulta(novaConsulta);
 
-        System.out.println("Consulta adicionada com sucesso!");
+        System.out.println("\nConsulta adicionada com sucesso!");
         scanner.close();
     }
 
     // Exibe os dados da consulta
     public void exibirDadosConsulta(Consulta consulta) {
-        System.out.println("Dados da Consulta:");
+        System.out.println("\nDados da Consulta:");
         System.out.println("Data: " + consulta.getData());
         System.out.println("Horario: " + consulta.getHorario());
         System.out.println("Medico responsavel: " + consulta.getMedico().getNomeMedico());
@@ -142,7 +159,7 @@ public class Clinica {
 
     // Exibe os dados do médico
     public void exibirDadosMedico(Medico medico) {
-        System.out.println("Dados do Médico:");
+        System.out.println("\nDados do Médico:");
         System.out.println("Nome: " + medico.getNomeMedico());
         System.out.println("CRM: " + medico.getCrm());
         System.out.println("Especialização: " + medico.getEspecializacao());
@@ -152,7 +169,7 @@ public class Clinica {
 
     // Exibe os dados do paciente
     public void exibirDadosPaciente(Paciente paciente) {
-        System.out.println("Dados do Paciente:");
+        System.out.println("\nDados do Paciente:");
         System.out.println("Nome: " + paciente.getNomePaciente());
         System.out.println("Idade: " + paciente.getIdade());
         System.out.println("Sintoma: " + paciente.getSintoma());
@@ -188,34 +205,74 @@ public class Clinica {
         System.out.println("\n");
 
         // Cria o Scanner pra inputar dados 
-        /*Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         boolean continuar = true;
 
         // Loop com a interface
         while (continuar) {
-            System.out.println("======== MENU DE OPÇÕES ========");
-            System.out.println("1. .");
-            System.out.println("2. .");
-            System.out.println("3. .");
-            System.out.println("4. Sair do prorama.");
+            System.out.println("\n======== MENU DE OPÇÕES ========");
+            System.out.println("1. Inserir novo Paciente.");
+            System.out.println("2. Inserir novo Medico.");
+            System.out.println("3. Inserir uma nova Consulta.");
+            System.out.println("4. Exibir Pacientes.");
+            System.out.println("5. Exibir Medicos.");
+            System.out.println("6. Exibir Consultas.");
+            System.out.println("7. Sair do prorama.");
+            System.out.println("================================");
             System.out.print("Escolha uma opção: ");
             int opcao = scanner.nextInt();
 
             switch (opcao) {
                 case 1:
-                    
+                    clinica.criarPaciente();
                     break;
 
                 case 2:
-                    
+                    clinica.criarMedico();
                     break;
 
                 case 3:
-                    
+                    clinica.criarConsulta();
+                    break;
+                
+                case 4:
+                    if (clinica.pacientes.isEmpty()) {
+                        System.out.println("Nenhum paciente cadastrado.");
+                    } 
+                    else {
+                        for (Paciente p : clinica.pacientes) {
+                            clinica.exibirDadosPaciente(p);
+                            System.out.println();
+                        }
+                    }
+                    break;
+                
+                case 5:
+                    if (clinica.medicos.isEmpty()) {
+                        System.out.println("Nenhum médico cadastrado.");
+                    } 
+                    else {
+                        for (Medico m : clinica.medicos) {
+                            clinica.exibirDadosMedico(m);
+                            System.out.println();
+                        }
+                    }
+                    break;
+                
+                case 6:
+                    if (clinica.consultas.isEmpty()) {
+                        System.out.println("Nenhuma consulta cadastrada.");
+                    } 
+                    else {
+                        for (Consulta c : clinica.consultas) {
+                            clinica.exibirDadosConsulta(c);
+                            System.out.println();
+                        }
+                    }
                     break;
 
-                case 4:
+                case 7:
                     System.out.println("Saindo do sistema...\n");
                     continuar = false;
                     break;
@@ -226,6 +283,6 @@ public class Clinica {
             }
         }
         // Encerra o leitor
-        scanner.close();*/
+        scanner.close();
     }
 }
