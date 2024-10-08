@@ -74,4 +74,15 @@ public class Paciente {
     public void setTipoSanguineo (String tipoSanguineo) {
         this.tipoSanguineo = tipoSanguineo;
     }
+
+    // Procedimentos
+    
+    public void temPlanoSaude(boolean planoSaude) {
+        if (planoSaude == true) {
+            System.out.println("Possui plano de saude!");
+        }
+        else {
+            System.out.println("Nao possui plano de saude!");
+        }
+    }
 }
