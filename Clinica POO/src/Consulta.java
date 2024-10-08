@@ -11,7 +11,7 @@ public class Consulta {
         // Construtor da classe
         this.data = data;
         this.horario = horario;
-        this.prioridade = false;
+        this.prioridade = prioridade;
         this.medico = medico;
         this.paciente = paciente;
     }
