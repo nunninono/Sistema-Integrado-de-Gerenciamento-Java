@@ -1,6 +1,8 @@
 package src;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SistemaIntegrado {
@@ -274,7 +276,7 @@ public class SistemaIntegrado {
         scanner.close();
     }    
 
-    //PARA TERMINAR AS 6 TOMADAS DE DECISÕES
+    //PARA TERMINAR AS 2 DE CLINICA E AS 2 DE EVENTOS TOMADAS DE DECISÕES
     private void eventoComMaisParticipantes() {
         
     }
@@ -283,22 +285,65 @@ public class SistemaIntegrado {
         
     }
 
-    private void medicoComMaisConsultas() {
+    private void medicoMaisSolicitado() {
         
     }
 
-    private void tipoConsultaMaisRealizada() {
+    private void datasHorariosDeUmMedico() {
         
     }
 
-    private void pratoMaisPedido() {
-        
+    public void pratoMaisPedido() {
+        Map<String, Integer> contadorPratos = new HashMap<>();
+        List<Mesa> mesas = restaurante.getMesas();
+        for (Mesa mesa : mesas) {
+            if (mesa.isOcupada()) {
+                for (ItemDoPedido item : mesa.getPedidos()) {
+                    String nomePrato = item.getNome();
+                    contadorPratos.put(nomePrato, contadorPratos.getOrDefault(nomePrato, 0) + 1);
+                }
+            }
+        }
+
+        String pratoMaisPedido = null;
+        int maxPedidos = 0;
+
+        for (Map.Entry<String, Integer> entry : contadorPratos.entrySet()) {
+            if (entry.getValue() > maxPedidos) {
+                maxPedidos = entry.getValue();
+                pratoMaisPedido = entry.getKey();
+            }
+        }
+
+        if (pratoMaisPedido != null) {
+            System.out.println("O prato mais pedido é: " + pratoMaisPedido + " (Total: " + maxPedidos + ")");
+        } else {
+            System.out.println("Nenhum prato foi pedido.");
+        }
     }
+
+    public void mesaMaisRentavel() {
+        double maiorTotal = 0;
+        Mesa mesaMaisRentavel = null;
     
-    private void mesaMaisRentavel() {
-        
-    }
+        List<Mesa> mesas = restaurante.getMesas();
     
+        for (Mesa mesa : mesas) {
+            if (mesa.isOcupada()) {
+                double totalMesa = mesa.getTotalPedido();
+                if (totalMesa > maiorTotal) {
+                    maiorTotal = totalMesa;
+                    mesaMaisRentavel = mesa;
+                }
+            }
+        }
+    
+        if (mesaMaisRentavel != null) {
+            System.out.println("A mesa mais rentável é a mesa " + mesaMaisRentavel.getNumero() + " com total de R$ " + maiorTotal);
+        } else {
+            System.out.println("Nenhuma mesa gerou receita.");
+        }
+    }    
 
     private void responderPerguntas(Scanner scanner) {
         boolean continuar = true;
@@ -306,8 +351,8 @@ public class SistemaIntegrado {
             System.out.println("\nMENU DE PERGUNTAS:");
             System.out.println("1. Qual é o evento com maior número de participantes?");
             System.out.println("2. Qual é o evento mais rentável?");
-            System.out.println("3. Qual médico realizou mais consultas?");
-            System.out.println("4. Qual é o tipo de consulta mais realizada?");
+            System.out.println("3. Qual médico foi mais solicitado?");
+            System.out.println("4. Quais são as datas e horários ocupados por um medico especifico?");
             System.out.println("5. Qual é o prato mais pedido?");
             System.out.println("6. Qual é a mesa que mais gera receita?");
             System.out.println("7. Voltar");
@@ -322,10 +367,10 @@ public class SistemaIntegrado {
                     eventoMaisRentavel();
                     break;
                 case 3:
-                    medicoComMaisConsultas();
+                    medicoMaisSolicitado();
                     break;
                 case 4:
-                    tipoConsultaMaisRealizada();
+                    datasHorariosDeUmMedico();
                     break;
                 case 5:
                     pratoMaisPedido();
