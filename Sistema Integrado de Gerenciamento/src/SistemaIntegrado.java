@@ -283,11 +283,11 @@ public class SistemaIntegrado {
         
     }
 
-    private void medicoComMaisConsultas() {
+    private void medicoMaisSolicitado() {
         
     }
 
-    private void tipoConsultaMaisRealizada() {
+    private void datasHorariosDeUmMedico() {
         
     }
 
@@ -306,8 +306,8 @@ public class SistemaIntegrado {
             System.out.println("\nMENU DE PERGUNTAS:");
             System.out.println("1. Qual é o evento com maior número de participantes?");
             System.out.println("2. Qual é o evento mais rentável?");
-            System.out.println("3. Qual médico realizou mais consultas?");
-            System.out.println("4. Qual é o tipo de consulta mais realizada?");
+            System.out.println("3. Qual médico foi mais solicitado?");
+            System.out.println("4. Quais sao as datas e horários ocupados por um medico especifico?");
             System.out.println("5. Qual é o prato mais pedido?");
             System.out.println("6. Qual é a mesa que mais gera receita?");
             System.out.println("7. Voltar");
@@ -322,10 +322,10 @@ public class SistemaIntegrado {
                     eventoMaisRentavel();
                     break;
                 case 3:
-                    medicoComMaisConsultas();
+                    medicoMaisSolicitado();
                     break;
                 case 4:
-                    tipoConsultaMaisRealizada();
+                    datasHorariosDeUmMedico();
                     break;
                 case 5:
                     pratoMaisPedido();
