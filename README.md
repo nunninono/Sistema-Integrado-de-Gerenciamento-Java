@@ -14,6 +14,9 @@ A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada
 
 ### Case 2: Sistema de Gerenciamento de Eventos - Ricardo Nery e Matheus Fabiano
 
+O sistema de gerenciamento de eventos e projetado para oferecer um sistema de gerenciamento pratico para controle e automação do serviço,oferecendo as seguintes funcionalidades de sistema: inscrição de participantes,manejamento de eventos e atraçãoes,e manejamento do local do evento.
+(continua)
+
 ### Case 3: Sistema de Gerenciamento de Restaurante - Noemi Soares
 
 O sistema de gerenciamento de restaurante em Java foi projetado para oferecer uma solução para o controle de mesas, pedidos e itens do menu. A estrutura do código é dividida em várias classes, cada uma desempenhando um papel essencial no funcionamento do sistema.
