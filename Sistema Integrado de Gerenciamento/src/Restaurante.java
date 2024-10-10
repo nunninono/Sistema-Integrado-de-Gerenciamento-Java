@@ -21,6 +21,10 @@ public class Restaurante {
         }
     }
 
+    public List<Mesa> getMesas() {
+        return mesas;
+    }    
+
     private void inicializarMenu() {
         menu.add(new ItemDoPedido("Galeto na Brasa", 28.00, 56.00, 112.00));
         menu.add(new ItemDoPedido("Carne de Sol", 25.00, 50.00, 100.00));
