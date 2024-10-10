@@ -1,6 +1,6 @@
 # Sistemas de Gerenciamento Integrados: Clínica Médica, Eventos e Restaurante
 
-## Integrantes do Projeto: Nunno Wakiyama Diniz Carvaho, Pedro Henrique Mendes Macedo, Ricardo Nery de Brito Junior, Matheus Fabiano Barbosa Aguiar e Noemi Soares Gonçalves da Silva
+### Integrantes do Projeto: Nunno Wakiyama Diniz Carvaho, Pedro Henrique Mendes Macedo, Ricardo Nery de Brito Junior, Matheus Fabiano Barbosa Aguiar e Noemi Soares Gonçalves da Silva
 
 Neste projeto, desenvolvemos uma aplicação em Java que simula sistemas de gerenciamento em três contextos distintos: uma clínica médica, um sistema de eventos e um restaurante. O objetivo é aplicar conceitos de programação orientada a objetos, demonstrando nossa compreensão e habilidade na manipulação de objetos e na implementação de funcionalidades práticas.
 
