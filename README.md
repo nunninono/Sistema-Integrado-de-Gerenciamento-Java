@@ -15,6 +15,8 @@ A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada
 ### Case 2: Sistema de Gerenciamento de Eventos - Ricardo Nery e Matheus Fabiano
 
 O sistema de gerenciamento de eventos e projetado para oferecer um sistema de gerenciamento pratico para controle e automação do serviço,oferecendo as seguintes funcionalidades de sistema: inscrição de participantes,manejamento de eventos e atraçãoes,e manejamento do local do evento.
+
+a classe principal e a de eventos,nela vocé podera fazer todo o gerenciamento do sistema,sendo responsavel por gerenciar os cadastros dos participantes do evento,atraçãoes dos eventos dia e local destinado para cada evento
 (continua)
 
 ### Case 3: Sistema de Gerenciamento de Restaurante - Noemi Soares
