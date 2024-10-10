@@ -39,6 +39,14 @@ public class Mesa {
         return ocupada;
     }
 
+    public List<ItemDoPedido> getPedidos() {
+        return pedidos;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+    
     public double getTotalPedido() {
         double total = 0;
         for (int i = 0; i < pedidos.size(); i++) {
