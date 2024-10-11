@@ -158,6 +158,14 @@ public class Clinica {
         
     }
 
+    private void medicoMaisSolicitado() {
+        
+    }
+
+    private void datasHorariosDeUmMedico() {
+        
+    }
+
     public static void main (String[] args) {
 
         Clinica clinica = new Clinica();
