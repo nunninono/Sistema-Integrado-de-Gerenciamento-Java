@@ -18,9 +18,6 @@ A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada
 
 O sistema de gerenciamento de eventos e projetado para oferecer um sistema de gerenciamento pratico para controle e automação do serviço,oferecendo as seguintes funcionalidades de sistema: inscrição de participantes,manejamento de eventos e atraçãoes,e manejamento do local do evento.
 
-a classe principal e a de eventos,nela vocé podera fazer todo o gerenciamento do sistema,sendo responsavel por gerenciar os cadastros dos participantes do evento,atraçãoes dos eventos dia e local destinado para cada evento
-(vou continuar)
-
 A classe Evento centraliza a lógica de gerenciamento do evento, controlando os participantes, a lotação e as atrações. Ela mantém um registro do nome do evento, data, local (referenciado por uma instância da classe Local), a capacidade máxima de participantes e uma lista de Participantes. Entre seus métodos, destaca-se o registrarParticipante, que adiciona um participante ao evento se ainda houver vagas disponíveis, evitando inscrições quando a capacidade máxima é atingida. O método verificarLotacao confirma se o número máximo de participantes já foi alcançado, e o gerarRelatorio produz um relatório detalhado sobre o evento, incluindo o local, data e lista de participantes, oferecendo uma visão geral da situação do evento.
 
 A classe Local gerencia as informações sobre o local onde o evento será realizado, com dois atributos principais: nomeLocal e endereco. Os métodos getter fornecem acesso a essas informações, e a sobrescrita de toString() organiza os dados para exibição no formato "nomeLocal (endereço)", tornando mais fácil a identificação e manipulação dos locais do evento.
