@@ -44,6 +44,7 @@ public class SistemaIntegrado {
                     break;
                 case 5:
                     System.out.println("\nAgradecemos pela preferência!");
+                    System.out.println("Saindo do programa...");
                     continuar = false;
                     break;
                 default:
@@ -314,13 +315,85 @@ public class SistemaIntegrado {
         }
     }
 
-    //PARA TERMINAR AS 2 DE CLINICA TOMADAS DE DECISÕES
-    private void medicoMaisSolicitado() {
-        
+    // Método para exibir o médico mais solicitado
+    public void medicoMaisSolicitado() {
+        if (medicos.isEmpty()) {
+            System.out.println("Nenhum médico registrado.");
+            return;
+        }
+
+        Medico medicoMaisSolicitado = null;
+        int maxConsultas = 0;
+
+        // Percorre a lista de médicos e verifica quem tem o maior contador de consultas
+        for (Medico medico : medicos) {
+            if (medico.getContadorDeConsultas() > maxConsultas) {
+                maxConsultas = medico.getContadorDeConsultas();
+                medicoMaisSolicitado = medico;
+            }
+        }
+
+        if (medicoMaisSolicitado != null) {
+            System.out.println("\nO médico mais solicitado é: " + medicoMaisSolicitado.getNomeMedico() + " com " + maxConsultas + " consultas.\n");
+        }
     }
 
-    private void datasHorariosDeUmMedico() {
-        
+    // Função para exibir todos os horários e datas de consultas de um médico específico
+    public void datasHorariosDeUmMedico(Scanner scanner) {
+        if (consultas.isEmpty()) {
+            System.out.println("Nenhuma consulta cadastrada.");
+            return;
+        }
+
+        // Solicitar o CRM ou nome do médico
+        System.out.print("\nDigite o nome ou o CRM do médico: ");
+        String entrada = scanner.nextLine();
+
+        Medico medicoEncontrado = null;
+
+        // Tentar encontrar o médico pelo nome ou CRM
+        try {
+            int crm = Integer.parseInt(entrada); // Tentar tratar como CRM (número)
+            for (Medico medico : medicos) {
+                if (medico.getCrm() == crm) {
+                    medicoEncontrado = medico;
+                    break;
+                }
+            }
+        } 
+        catch (NumberFormatException e) {
+            // Se a entrada não for um número, buscar pelo nome
+            for (Medico medico : medicos) {
+                if (medico.getNomeMedico().equalsIgnoreCase(entrada)) {
+                    medicoEncontrado = medico;
+                    break;
+                }
+            }
+        }
+
+        // Verificar se o médico foi encontrado
+        if (medicoEncontrado == null) {
+            System.out.println("Médico não encontrado.\n");
+            return;
+        }
+
+        // Exibir todas as consultas do médico encontrado
+        System.out.println("\nConsultas agendadas para o médico " + medicoEncontrado.getNomeMedico() + ":");
+
+        boolean encontrouConsulta = false;
+
+        for (Consulta consulta : consultas) {
+            if (consulta.getMedico().equals(medicoEncontrado)) {
+                System.out.println("Data: " + consulta.getData() + " | Horário: " + consulta.getHorario());
+                encontrouConsulta = true;
+            }
+        }
+
+        System.out.println("\n");
+
+        if (encontrouConsulta == false) {
+            System.out.println("Este médico não tem consultas agendadas.\n");
+        }
     }
 
     public void pratoMaisPedido() {
@@ -400,7 +473,7 @@ public class SistemaIntegrado {
                     medicoMaisSolicitado();
                     break;
                 case 4:
-                    datasHorariosDeUmMedico();
+                    datasHorariosDeUmMedico(Scanner scanner);
                     break;
                 case 5:
                     pratoMaisPedido();
