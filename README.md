@@ -63,7 +63,7 @@ A classe `SistemaIntegrado` é o núcleo do sistema, onde são instanciados obje
 
 **Gerenciamento de Clínica:** Nesta parte, o sistema permite cadastrar médicos e pacientes, agendar consultas, gerar relatórios sobre as consultas e identificar os médicos mais solicitados. Essa funcionalidade é ideal para clínicas que desejam otimizar a gestão de seus agendamentos e recursos.
 
-**Perguntas e Relatórios:** Além das funcionalidades básicas de cada módulo, o sistema também oferece uma série de perguntas que permitem extrair informações importantes sobre o desempenho do sistema. Por exemplo, é possível identificar qual o prato mais pedido em um restaurante, qual evento gerou mais receita ou qual médico foi mais procurado.
+**Tomada de Decisões:** Além das funcionalidades básicas de cada módulo, o sistema também oferece uma série de perguntas que permitem extrair informações importantes sobre o desempenho do sistema. Por exemplo, é possível identificar qual o prato mais pedido em um restaurante, qual evento gerou mais receita ou qual médico foi mais procurado.
 
 Em resumo, o código apresentado oferece uma solução completa e flexível para gerenciar diferentes tipos de negócios. Sua estrutura modular e suas funcionalidades o tornam uma ferramenta importante para o projeto que buscam otimizar seus processos e tomar decisões mais assertivas.
 
