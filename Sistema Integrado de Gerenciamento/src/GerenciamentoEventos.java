@@ -1,5 +1,6 @@
 package src;
 public class GerenciamentoEventos {
+
     public static void main(String[] args) {
         Local local = new Local("Centro de Convenções", "Av. Principal, 100");
 
