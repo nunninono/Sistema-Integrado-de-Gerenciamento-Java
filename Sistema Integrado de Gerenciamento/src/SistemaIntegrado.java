@@ -276,15 +276,45 @@ public class SistemaIntegrado {
         scanner.close();
     }    
 
-    //PARA TERMINAR AS 2 DE CLINICA E AS 2 DE EVENTOS TOMADAS DE DECISÕES
     private void eventoComMaisParticipantes() {
-        
+        Evento eventoComMaisParticipantes = null;
+
+        for (Evento evento : eventos) {
+            if (eventoComMaisParticipantes == null || evento.getParticipante().size() > eventoComMaisParticipantes.getParticipante().size()) {
+                eventoComMaisParticipantes = evento;
+            }
+        }
+
+        if (eventoComMaisParticipantes != null) {
+            System.out.println("O evento com mais participantes é: " + eventoComMaisParticipantes.getNome() +
+                               " com " + eventoComMaisParticipantes.getParticipante().size() + " participantes.");
+        } else {
+            System.out.println("Nenhum evento encontrado.");
+        }
     }
 
     private void eventoMaisRentavel() {
-        
+        Evento eventoMaisRentavel = null;
+        double maiorReceita = 0;
+        double precoPorParticipante = 100;
+
+        for (Evento evento : eventos) {
+            double receitaAtual = evento.getParticipante().size() * precoPorParticipante;
+            if (eventoMaisRentavel == null || receitaAtual > maiorReceita) {
+                maiorReceita = receitaAtual;
+                eventoMaisRentavel = evento;
+            }
+        }
+
+        if (eventoMaisRentavel != null) {
+            System.out.println("O evento mais rentável é: " + eventoMaisRentavel.getNome() +
+                               " com uma receita de R$ " + maiorReceita);
+        } else {
+            System.out.println("Nenhum evento encontrado.");
+        }
     }
 
+    //PARA TERMINAR AS 2 DE CLINICA TOMADAS DE DECISÕES
     private void medicoMaisSolicitado() {
         
     }
