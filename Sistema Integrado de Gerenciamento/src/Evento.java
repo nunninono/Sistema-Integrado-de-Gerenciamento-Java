@@ -42,6 +42,10 @@ public class Evento {
         }
     }
 
+    public List<Participante> getParticipante() {
+        return participantes;
+    }
+
     public String getNome() {
         return nome;
     }
