@@ -12,7 +12,7 @@ A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada
 
 ### Case 1: Sistema de Gerenciamento Clínica Médica - Nunno Wakiyama e Pedro Henrique
 
-
+...
 
 ### Case 2: Sistema de Gerenciamento de Eventos - Ricardo Nery e Matheus Fabiano
 
