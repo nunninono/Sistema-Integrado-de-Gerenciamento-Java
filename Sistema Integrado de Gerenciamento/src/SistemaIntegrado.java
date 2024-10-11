@@ -352,7 +352,11 @@ public class SistemaIntegrado {
             System.out.println("1. Qual é o evento com maior número de participantes?");
             System.out.println("2. Qual é o evento mais rentável?");
             System.out.println("3. Qual médico foi mais solicitado?");
+<<<<<<< HEAD
             System.out.println("4. Quais são as datas e horários ocupados por um medico especifico?");
+=======
+            System.out.println("4. Quais sao as datas e horários ocupados por um medico especifico?");
+>>>>>>> 376aed5f627e2c92edebf0636b8c92be3abaccf1
             System.out.println("5. Qual é o prato mais pedido?");
             System.out.println("6. Qual é a mesa que mais gera receita?");
             System.out.println("7. Voltar");
