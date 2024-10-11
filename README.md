@@ -12,6 +12,8 @@ A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada
 
 ### Case 1: Sistema de Gerenciamento Clínica Médica - Nunno Wakiyama e Pedro Henrique
 
+
+
 ### Case 2: Sistema de Gerenciamento de Eventos - Ricardo Nery e Matheus Fabiano
 
 O sistema de gerenciamento de eventos e projetado para oferecer um sistema de gerenciamento pratico para controle e automação do serviço,oferecendo as seguintes funcionalidades de sistema: inscrição de participantes,manejamento de eventos e atraçãoes,e manejamento do local do evento.
