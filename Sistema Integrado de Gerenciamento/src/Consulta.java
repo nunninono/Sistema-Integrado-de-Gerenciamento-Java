@@ -35,8 +35,6 @@ public class Consulta {
         return paciente;
     }
 
-    // Sets
-
     public void setData (String data) {
         this.data = data;
     }
