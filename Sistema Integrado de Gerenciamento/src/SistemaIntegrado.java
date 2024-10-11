@@ -249,10 +249,10 @@ public class SistemaIntegrado {
     }
     
     private void exibirPacientes() {
-        if (clinica.pacientes.isEmpty()) {
+        if (clinica.getPacientes().isEmpty()) {
             System.out.println("Nenhum paciente cadastrado.");
         } else {
-            for (Paciente p : clinica.pacientes) {
+            for (Paciente p : clinica.getPacientes()) {
                 clinica.exibirDadosPaciente(p);
                 System.out.println();
             }
@@ -260,10 +260,10 @@ public class SistemaIntegrado {
     }
     
     private void exibirMedicos() {
-        if (clinica.medicos.isEmpty()) {
+        if (clinica.getMedicos().isEmpty()) {
             System.out.println("Nenhum médico cadastrado.");
         } else {
-            for (Medico m : clinica.medicos) {
+            for (Medico m : clinica.getMedicos()) {
                 clinica.exibirDadosMedico(m);
                 System.out.println();
             }
@@ -275,7 +275,7 @@ public class SistemaIntegrado {
         SistemaIntegrado sistema = new SistemaIntegrado();
         sistema.exibirMenuPrincipal(scanner);
         scanner.close();
-    }    
+    }     
 
     private void eventoComMaisParticipantes() {
         Evento eventoComMaisParticipantes = null;
@@ -315,9 +315,8 @@ public class SistemaIntegrado {
         }
     }
 
-    // Método para exibir o médico mais solicitado
     public void medicoMaisSolicitado() {
-        if (medicos.isEmpty()) {
+        if (clinica.getMedicos().isEmpty()) {
             System.out.println("Nenhum médico registrado.");
             return;
         }
@@ -325,8 +324,7 @@ public class SistemaIntegrado {
         Medico medicoMaisSolicitado = null;
         int maxConsultas = 0;
 
-        // Percorre a lista de médicos e verifica quem tem o maior contador de consultas
-        for (Medico medico : medicos) {
+        for (Medico medico : clinica.getMedicos()) {
             if (medico.getContadorDeConsultas() > maxConsultas) {
                 maxConsultas = medico.getContadorDeConsultas();
                 medicoMaisSolicitado = medico;
@@ -338,23 +336,21 @@ public class SistemaIntegrado {
         }
     }
 
-    // Função para exibir todos os horários e datas de consultas de um médico específico
     public void datasHorariosDeUmMedico(Scanner scanner) {
-        if (consultas.isEmpty()) {
+        if (clinica.getConsultas().isEmpty()) {
             System.out.println("Nenhuma consulta cadastrada.");
             return;
         }
 
-        // Solicitar o CRM ou nome do médico
+        scanner.nextLine();
         System.out.print("\nDigite o nome ou o CRM do médico: ");
         String entrada = scanner.nextLine();
 
         Medico medicoEncontrado = null;
 
-        // Tentar encontrar o médico pelo nome ou CRM
         try {
-            int crm = Integer.parseInt(entrada); // Tentar tratar como CRM (número)
-            for (Medico medico : medicos) {
+            int crm = Integer.parseInt(entrada);
+            for (Medico medico : clinica.getMedicos()) {
                 if (medico.getCrm() == crm) {
                     medicoEncontrado = medico;
                     break;
@@ -362,8 +358,7 @@ public class SistemaIntegrado {
             }
         } 
         catch (NumberFormatException e) {
-            // Se a entrada não for um número, buscar pelo nome
-            for (Medico medico : medicos) {
+            for (Medico medico : clinica.getMedicos()) {
                 if (medico.getNomeMedico().equalsIgnoreCase(entrada)) {
                     medicoEncontrado = medico;
                     break;
@@ -371,18 +366,16 @@ public class SistemaIntegrado {
             }
         }
 
-        // Verificar se o médico foi encontrado
         if (medicoEncontrado == null) {
             System.out.println("Médico não encontrado.\n");
             return;
         }
 
-        // Exibir todas as consultas do médico encontrado
         System.out.println("\nConsultas agendadas para o médico " + medicoEncontrado.getNomeMedico() + ":");
 
         boolean encontrouConsulta = false;
 
-        for (Consulta consulta : consultas) {
+        for (Consulta consulta : clinica.getConsultas()) {
             if (consulta.getMedico().equals(medicoEncontrado)) {
                 System.out.println("Data: " + consulta.getData() + " | Horário: " + consulta.getHorario());
                 encontrouConsulta = true;
@@ -473,7 +466,7 @@ public class SistemaIntegrado {
                     medicoMaisSolicitado();
                     break;
                 case 4:
-                    datasHorariosDeUmMedico(Scanner scanner);
+                    datasHorariosDeUmMedico(scanner);
                     break;
                 case 5:
                     pratoMaisPedido();
