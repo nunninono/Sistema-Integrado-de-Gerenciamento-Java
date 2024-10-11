@@ -53,4 +53,20 @@ O sistema de gerenciamento de restaurante em Java é uma implementação que abr
 
 ### Case 4: Integração dos Sistemas de Gerenciamentos
 
+O código refere-se à implementação de um sistema integrado que gerencia três serviços distintos: restaurante, eventos e clínica. Essa estrutura permite que um usuário interaja com diferentes módulos através de um menu principal, facilitando o gerenciamento e o acesso a informações relevantes. Vamos explicar as principais partes do código e suas funcionalidades.
+
+A classe `SistemaIntegrado` é o núcleo do sistema, onde são instanciados objetos das classes `Restaurante`, `Clinica` e uma lista de eventos `Eventos`. O construtor inicializa essas entidades, preparando o sistema para uso. O método `exibirMenuPrincipal` é responsável por apresentar ao usuário as opções disponíveis. Um loop while mantém o menu ativo até que o usuário escolha sair. As opções incluem acessar o restaurante, gerenciar eventos, acessar a clínica, responder a perguntas de tomada de decisão ou sair do programa.
+
+**Gerenciamento de Restaurante:** Essa parte do sistema permite gerenciar todas as operações de um restaurante, desde a exibição do cardápio até a geração de relatórios financeiros. É possível realizar pedidos, fechar contas, verificar o status de pedidos e gerar relatórios detalhados sobre as vendas.
+
+**Gerenciamento de Eventos:** O sistema permite criar eventos, registrar participantes, gerar relatórios sobre os eventos e identificar quais eventos foram os mais populares e rentáveis. Essa funcionalidade é útil para organizadores de eventos que desejam ter um controle mais preciso sobre seus eventos.
+
+**Gerenciamento de Clínica:** Nesta parte, o sistema permite cadastrar médicos e pacientes, agendar consultas, gerar relatórios sobre as consultas e identificar os médicos mais solicitados. Essa funcionalidade é ideal para clínicas que desejam otimizar a gestão de seus agendamentos e recursos.
+
+**Perguntas e Relatórios:** Além das funcionalidades básicas de cada módulo, o sistema também oferece uma série de perguntas que permitem extrair informações importantes sobre o desempenho do sistema. Por exemplo, é possível identificar qual o prato mais pedido em um restaurante, qual evento gerou mais receita ou qual médico foi mais procurado.
+
+Em resumo, o código apresentado oferece uma solução completa e flexível para gerenciar diferentes tipos de negócios. Sua estrutura modular e suas funcionalidades o tornam uma ferramenta importante para o projeto que buscam otimizar seus processos e tomar decisões mais assertivas.
+
 ### Conclusão
+
+O projeto de Programação Orientada a Objetos resultou na criação de um sistema completo e eficiente, utilizando Java como linguagem de programação para gerenciar a aplicação. A equipe desenvolveu classes enquanto iamos implementando funcionalidades como agendamento de consultas, registro de participantes em eventos e gerenciamento de pedidos. Através da utilização de padrões de projeto, foi possível organizar o código de forma clara. Um dos maiores desafios foi a integração dos diferentes módulos, que foi superada com o uso de interfaces, assim podendo desenvolver a Tomada de Decisão. O sistema finalizado possui uma interface intuitiva, que permite aos usuários interagir com o sistema de forma fácil e eficiente.
