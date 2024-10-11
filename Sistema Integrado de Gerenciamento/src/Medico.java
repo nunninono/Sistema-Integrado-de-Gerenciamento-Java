@@ -1,5 +1,6 @@
+package src;
+
 public class Medico {
-    // Atributos da classe
     private String nomeMedico;
     private boolean disponibilidade;
     private String especializacao;
@@ -7,17 +8,12 @@ public class Medico {
     private int contadorDeConsultas;
     
     public Medico (String nomeMedico, boolean disponibilidade, String especializacao, int crm, int contadorDeConsulta) {
-        // Construtor da classe
         this.nomeMedico = nomeMedico;
         this.disponibilidade = disponibilidade;
         this.especializacao = especializacao;
         this.crm = crm;
         this.contadorDeConsultas = 0;
     }
-
-    // Cria os gets e sets pra acessar os atributos (get para ler  set para editar)
-
-    // Gets
 
     public String getNomeMedico() {
         return nomeMedico;
@@ -39,8 +35,6 @@ public class Medico {
         return contadorDeConsultas;
     }
 
-    // Sets
-
     public void setNomeMedico (String nomeMedico) {
         this.nomeMedico = nomeMedico;
     }
@@ -60,8 +54,6 @@ public class Medico {
     public void setCrm (int crm) {
         this.crm = crm;
     }
-
-    // Procediemntos
 
     public void estaDisponivel (boolean disponibilidade) {
         if (disponibilidade == true) {
