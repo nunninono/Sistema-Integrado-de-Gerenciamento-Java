@@ -12,7 +12,10 @@ A seguir, apresentamos o passo a passo das funcionalidades implementadas em cada
 
 ### Case 1: Sistema de Gerenciamento Clínica Médica - Nunno Wakiyama e Pedro Henrique
 
-...
+O sistema de gerenciamento de clínicas médicas, desenvolvido em Java, tem como objetivo principal a criação e administração de consultas médicas, com base nos médicos e pacientes cadastrados. Além disso, o sistema incorpora funcionalidades que visam aprimorar a usabilidade, tais como a identificação do médico mais requisitado e a consulta das datas e horários já ocupados por um médico específico. Para tanto, os usuários têm a capacidade de inserir novos médicos e pacientes, bem como agendar novas consultas. 
+
+A classe nomeada de `Clínica` é a principal do sistema, por isso também recebe o seu nome. Seus atributos são justamente `arraylists` de cada uma das 3 classes `Medico`, `Consulta` e `Paciente`. Ademais, é a responsável por realizar todas as operações de gerenciamento citadas no primeiro texto, possuindo a declaração de todas as funções, como: `adicionarConsulta()`, `adicionarMedico()`, `adicionarPaciente()`, `criarPaciente()`, `criarMedico()`, `criarConsulta()`, `exibirDadosConsulta()`, `exibirDadosMedico()` e `exibirDadosPaciente()`. Essas são as funções responsáveis por gerir os dados dos arrays de cada classe, mas a `Clinica` possui funções auxiliares que ajudam na tomada de decisão, essas são: `dataHorariosDeUmMedico` e `medicoMaisSolicitado`. 
+
 
 ### Case 2: Sistema de Gerenciamento de Eventos - Ricardo Nery e Matheus Fabiano
 
